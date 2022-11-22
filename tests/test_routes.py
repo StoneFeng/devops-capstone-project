@@ -21,6 +21,7 @@ DATABASE_URI = os.getenv(
 BASE_URL = "/accounts"
 HTTPS_ENVIRON = {'wsgi.url_scheme': 'https'}
 
+
 ######################################################################
 #  T E S T   C A S E S
 ######################################################################
@@ -195,3 +196,4 @@ class TestAccountService(TestCase):
         """It should not allow an illegal method call"""
         resp = self.client.delete(BASE_URL)
         self.assertEqual(resp.status_code, status.HTTP_405_METHOD_NOT_ALLOWED)
+        
